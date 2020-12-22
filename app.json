@@ -1,15 +1,68 @@
 {
   "entryPagePath": "pages/index/index",
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/video/video",
+    "pages/personal/personal"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#D43C33",
     "navigationBarTitleText": "云音乐",
-    "navigationBarTextStyle":"black",
-    "backgroundColor":"#FBFCFD"
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FBFCFD"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#d43c33",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "selectedIconPath": "static/images/tabs/tab-home-current.png",
+        "iconPath": "static/images/tabs/tab-home.png",
+        "pagePath": "pages/index/index",
+        "text": "主页"
+      },
+      {
+        "selectedIconPath": "static/images/tabs/selected.png",
+        "iconPath": "static/images/tabs/select.png",
+        "pagePath": "pages/video/video",
+        "text": "视频"
+      },
+      {
+        "selectedIconPath": "static/images/tabs/tab-my-current.png",
+        "iconPath": "static/images/tabs/tab-my.png",
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "subpackages": [
+    {
+      "root": "songPackage",
+      "pages": [
+        "pages/recommendSong/recommendSong",
+        "pages/songDetail/songDetail"
+      ],
+      "independent": true
+    },
+    {
+      "root": "otherPackage",
+      "name": "other",
+      "pages": [
+        "pages/other/other"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "packages": ["songPackage", "other"]
+    }
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
