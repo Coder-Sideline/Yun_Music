@@ -4,7 +4,9 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/video/video",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/login/login",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -61,7 +63,10 @@
   ],
   "preloadRule": {
     "pages/index/index": {
-      "packages": ["songPackage", "other"]
+      "packages": [
+        "songPackage",
+        "other"
+      ]
     }
   },
   "style": "v2",
